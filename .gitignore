@@ -1,5 +1,5 @@
 /.python-version
-/app/engine/config.yml
+/**/config.yml
 /test_script/
 /**/credentials.json
 /**/__pycache__/
