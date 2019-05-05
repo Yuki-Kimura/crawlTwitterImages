@@ -2,3 +2,4 @@
 /app/engine/config.yml
 /test_script/
 /**/credentials.json
+/**/__pycache__/
