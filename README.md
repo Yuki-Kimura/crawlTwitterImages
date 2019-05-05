@@ -7,7 +7,7 @@ Twitter上で特定のユーザーの画像をGoogleDriveにダウンロード�
 $ pip install -r pipfile.txt
 ```
 
-1. test_scripts/engine` と `app/engine` に`config.yml` を作成します
+1. `test_scripts/engine` と `app/engine` に`config.yml` を作成します
 ```config.yml
 
 client_config:
