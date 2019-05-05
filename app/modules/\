@@ -1,0 +1,6 @@
+from settings.params import drive_id
+from ..engine.config import config
+
+if __name__ == '__main__':
+    print(drive_id)
+    print(config.keys())
