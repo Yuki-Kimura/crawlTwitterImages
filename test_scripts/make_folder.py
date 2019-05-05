@@ -8,7 +8,6 @@ gauth.CommandLineAuth()
 drive = GoogleDrive(gauth)
 
 file = drive.CreateFile({'title' : 'testF aaa aaa',
-            # 'parents':[{'id': '1FFYzUMMF-0Ku-wX26SCIPM8TTRbLxlT5'}],
             'mimeType': 'application/vnd.google-apps.folder'})
 file.Upload()
 
