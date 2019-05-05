@@ -7,7 +7,7 @@ gauth = GoogleAuth(settings_file=show_path())
 gauth.CommandLineAuth()
 drive = GoogleDrive(gauth)
 
-file = drive.CreateFile({'title' : 'testF aaa aaa',
+file = drive.CreateFile({'title' : 'TwitterImageCrawl',
             'mimeType': 'application/vnd.google-apps.folder'})
 file.Upload()
 
