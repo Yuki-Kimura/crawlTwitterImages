@@ -7,8 +7,8 @@ Twitter上で特定のユーザーの画像をGoogleDriveにダウンロード�
 $ pip install -r pipfile.txt
 ```
 
-1. `test_scripts/engine` と `app/engine` に`config.yml` を作成します
-```config.yml
+1. `test_scripts/engine` と `app/engine` に`config.yml` を作成し、以下を追加します。
+```
 
 client_config:
   client_id: <GoogleAPIのAPI KEY>
@@ -39,7 +39,7 @@ $ python make_folder.py
 1. 自分のGoogleDriveに `TwitterImageCrawl` フォルダーができていることを確認
 
 1. 2つの `config.yml` に以下を追加
-```config.yml
+```
 root_folder_id: <TwitterImageCrawlのID>
 ```
 
