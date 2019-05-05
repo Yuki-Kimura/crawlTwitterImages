@@ -32,6 +32,11 @@ def search_image(screen_name, post_id=None):
         for line in timelines:
             print(line['user']['name']+'::'+line['text'])
             print('*******************************************')
+            created_at = datetime.datetime.strptime(
+                line['created_at'],
+                '%a %b %d %H:%M:%S %z %Y'
+            )
+            fname = created_at.strftime('%F/%T')
             if id_flag:
                 post_id = line.get('id_str', post_id)
                 id_flag = False
@@ -44,7 +49,7 @@ def search_image(screen_name, post_id=None):
                         'url': item['media_url']+':orig',
                         'title': title,
                         'description': desc,
-                        'fname': line['created_at']
+                        'fname': fname
                     })
     else:
         print("Failed: %d" % res.status_code)
