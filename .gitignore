@@ -1,3 +1,4 @@
 /.python-version
 /app/engine/config.yml
 /test_script/
+/**/credentials.json
