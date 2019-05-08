@@ -1,5 +1,7 @@
 # crawlTwitterImages
 常駐させてTwitter上で特定のユーザーが画像を投稿したらGoogleDriveにダウンロードします。
+言語: Python3
+パッケージマネージャー: pip
 
 ## 使い方
 1. 必要なライブラリのインストール
