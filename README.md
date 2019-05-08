@@ -1,5 +1,5 @@
 # crawlTwitterImages
-Twitter上で特定のユーザーの画像をGoogleDriveにダウンロードします。
+常駐させてTwitter上で特定のユーザーが画像を投稿したらGoogleDriveにダウンロードします。
 
 ## 使い方
 1. 必要なライブラリのインストール
