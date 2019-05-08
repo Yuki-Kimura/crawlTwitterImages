@@ -35,6 +35,7 @@ twitter:
 ```
 $ python make_folder.py
 ```
+(初回起動時にGoogleの認証ページを開いて認証する必要あり)
 
 4. 自分のGoogleDriveに `TwitterImageCrawl` フォルダーができていることを確認
 
@@ -47,4 +48,4 @@ root_folder_id: <TwitterImageCrawlのID>
 ```
 $ python service.py
 ```
-
+(初回起動時にGoogleの認証ページを開いて認証する必要あり)
