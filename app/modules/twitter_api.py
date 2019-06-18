@@ -44,12 +44,18 @@ def search_image(screen_name, post_id=None):
                 # pprint.pprint(line)
                 desc = line['created_at'] + '\n' + line['text'] + '\ntweet_key: ' + line['id_str']
                 for i, item in enumerate(line['extended_entities'].get('media')):
+                    is_video = 0
                     title = line['id_str'] + '-' + str(i+1)
+                    url = item['media_url'] + ':orig'
+                    if "video_info" in item:
+                        is_video = 1
+                        url = item['video_info']["variants"][1]['url']
                     images.append({
-                        'url': item['media_url']+':orig',
+                        'url': url,
                         'title': title,
                         'description': desc,
-                        'fname': fname
+                        'fname': fname,
+                        'is_video': is_video
                     })
     else:
         print("Failed: %d" % res.status_code)

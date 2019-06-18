@@ -4,6 +4,7 @@ from pprint import pprint
 import io
 import tempfile
 import requests
+import urllib
 
 from PIL import Image
 
@@ -53,13 +54,31 @@ def is_image_folder(fid, fname):
 def save_images(images, folder_id):
     
     for image in images:
-        img = Image.open(io.BytesIO(requests.get(image['url']).content))
         save_folder = is_image_folder(folder_id, image['fname'])
+        if image.get('is_video', 0):
+            video_url = image['url']
+            mime = 'video/mp4' 
 
+            tmpfile = tempfile.NamedTemporaryFile()
+            urllib.request.urlretrieve(video_url, tmpfile.name)
+
+            f = drive.CreateFile({
+                'title': image['title'],
+                'mimeType': mime,
+                'parents': [{'kind': 'drive#fileLink', 'id': save_folder}]
+                })
+            f.SetContentFile(tmpfile.name)
+            f.Upload()
+            f['description'] = image['description']
+            f.Upload()
+            pprint(f)
+            print("*"*20)
+            continue
+
+        img = Image.open(io.BytesIO(requests.get(image['url']).content))
         tmpfile = tempfile.TemporaryFile()
         img.save(tmpfile, img.format)
         mime = Image.MIME[img.format]
-        file_title = 'testp.' + img.format.lower()
         f = drive.CreateFile({
             'title': image['title'],
             'mimeType': mime,
