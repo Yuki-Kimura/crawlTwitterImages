@@ -1,8 +1,9 @@
 from pprint import pprint
 
-from .twitter_api import search_image
-from .google_drive import is_user_folder, save_images
 from engine.config import config
+
+from .google_drive import is_user_folder, save_images
+from .twitter_api import search_image
 from .update_yaml import update_yaml
 
 
