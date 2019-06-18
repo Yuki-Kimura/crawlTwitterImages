@@ -1,5 +1,7 @@
 # crawlTwitterImages
-Twitter上で特定のユーザーの画像をGoogleDriveにダウンロードします。
+常駐させてTwitter上で特定のユーザーが画像を投稿したらGoogleDriveにダウンロードします。
+- 言語: Python3
+- パッケージマネージャー: pip
 
 ## 使い方
 1. 必要なライブラリのインストール
@@ -7,7 +9,7 @@ Twitter上で特定のユーザーの画像をGoogleDriveにダウンロード�
 $ pip install -r pipfile.txt
 ```
 
-1. `test_scripts/engine` と `app/engine` に`config.yml` を作成し、以下を追加します。
+2. `test_scripts/engine` と `app/engine` に`config.yml` を作成し、以下を追加します。
 ```
 
 client_config:
@@ -31,20 +33,21 @@ twitter:
   api_key: <TwitterのAPI KEY>
   api_secret: <TwitterのAPI SECRET>
 ```
-1. `test_scripts/make_folder.py` を実行
+3. `test_scripts/make_folder.py` を実行
 ```
 $ python make_folder.py
 ```
+(初回起動時にGoogleの認証ページを開いて認証する必要あり)
 
-1. 自分のGoogleDriveに `TwitterImageCrawl` フォルダーができていることを確認
+4. 自分のGoogleDriveに `TwitterImageCrawl` フォルダーができていることを確認
 
-1. 2つの `config.yml` に以下を追加
+5. 2つの `config.yml` に以下を追加
 ```
 root_folder_id: <TwitterImageCrawlのID>
 ```
 
-1. `/app` 上で `service.py` を実行
+6. `/app` 上で `service.py` を実行
 ```
 $ python service.py
 ```
-
+(初回起動時にGoogleの認証ページを開いて認証する必要あり)
